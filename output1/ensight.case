@@ -1,0 +1,22 @@
+FORMAT
+type: ensight gold
+
+GEOMETRY
+model: 1 ensight.geo/ensight1.geo000000
+
+VARIABLE
+scalar per element:    1   Ux Ux/Ux******
+scalar per element:    1   Uy Uy/Uy******
+scalar per element:    1   Uz Uz/Uz******
+scalar per element:    1   Pm Pm/Pm******
+scalar per element:    1   Tm Tm/Tm******
+scalar per element:    1   Ph Ph/Ph******
+scalar per element:    1   Cm Cm/Cm******
+
+TIME
+time set:                   1
+number of steps:            1
+filename start number: 1
+filename increment:    1
+time values:
+           1

@@ -1,0 +1,50 @@
+ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+c
+c     DIMENSIONNEMENTS 
+c
+ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+c
+c	Dimension de l'espace 
+c
+	parameter ( NbDim = 3) 
+c
+c
+c       Nb d'inc flow PT -> 2 
+c
+	parameter ( NbIncPrim = 2) 
+
+ccccccccccccccccccc
+c
+c     Maillage 
+c
+c
+	parameter ( NbNodebyCellMax  = 8 )
+        parameter ( NbFacebyCellMax  = 12 )
+
+	parameter ( NbdofbyCellMax  = NbNodebyCellMax
+     &                              + NbFacebyCellMax )
+
+        parameter ( NbAretebyFaceMax = 4 )
+        parameter ( NbNodebyFaceMax  = 4 )
+        parameter ( NbInterfacebyCellMax  = NbNodebyCellMax 
+     &                                     + NbFacebyCellMax )
+        parameter ( NbInterfacebyFaceFracMax  = NbAretebyFaceMax )
+
+
+
+	parameter ( NbCellbyNodeMax  = 150 )
+	parameter ( NbLabelbyNodeMax = 10 )
+
+	parameter ( NbIncbyCellMax = NbNodebyCellMax
+     &                             + NbFacebyCellMax )
+
+	parameter ( NbNzbyLineMax = 200 )
+	parameter ( NbNzbyLineMecaMax = 300 )
+
+	parameter( NbFacebyAreteMax = 10 )
+
+c
+c
+c
+cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+

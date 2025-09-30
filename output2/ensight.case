@@ -1,0 +1,26 @@
+FORMAT
+type: ensight gold
+
+GEOMETRY
+model: 1 ensight.geo/ensight2.geo000000
+
+VARIABLE
+scalar per element:    1   Sn Sn/Sn******
+scalar per element:    1   S2 S2/S2******
+scalar per element:    1   S3 S3/S3******
+scalar per element:    1   Ln Ln/Ln******
+scalar per element:    1   L2 L2/L2******
+scalar per element:    1   L3 L3/L3******
+scalar per element:    1   CS CS/CS******
+scalar per element:    1   Pf Pf/Pf******
+scalar per element:    1   Tf Tf/Tf******
+scalar per element:    1   df df/df******
+scalar per element:    1   Cf Cf/Cf******
+
+TIME
+time set:                   1
+number of steps:            1
+filename start number: 1
+filename increment:    1
+time values:
+           1
