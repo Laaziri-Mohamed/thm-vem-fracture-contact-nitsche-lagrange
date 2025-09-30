@@ -2,7 +2,7 @@
 
 High‑performance research code for **linear elasticity with fractures and contact** (Coulomb friction) coupled with **pressure/temperature (poro‑thermo) flow** on general polyhedral meshes using a **Virtual Element Method (VEM) of degree 1**. Two contact formulations are provided:
 
-- **Nitsche** (no friction): penalty/Nitsche enforcement on fracture faces.
+- **Nitsche** : penalty/Nitsche enforcement on fracture faces.
 - **Mixed VEM with bubble DOFs + Lagrange multipliers** (with friction): constant multipliers per fracture face, optional normal stiffness.
 
 This README explains every file in this repository, how to build the solver, and how to run the example setups found in `main.f`.
@@ -30,7 +30,7 @@ This README explains every file in this repository, how to build the solver, and
 
 ## What’s in here?
 
-This code base targets 3D polyhedral grids and fractures represented as (internal) faces. The **mechanics** is solved with VEM (degree 1), optionally enriched with **bubble DOFs on fracture faces**. Contact is either **Nitsche** (no friction) or **mixed with constant per‑face multipliers** (Coulomb friction). The **porous flow + heat** part solves for **pressure (P)** and **temperature (T)** with Darcy/Fourier fluxes, including high‑order intersections (≥3 faces). A **fixed‑stress style relaxation** is applied in the matrix for the coupling.
+This code base targets 3D polyhedral grids and fractures represented as (internal) faces. The **mechanics** is solved with VEM (degree 1), optionally enriched with **bubble DOFs on fracture faces**. Contact is either **Nitsche**  or **mixed with constant per‑face multipliers** (Coulomb friction). The **porous flow + heat** part solves for **pressure (P)** and **temperature (T)** with Darcy/Fourier fluxes, including high‑order intersections (≥3 faces). A **fixed‑stress style relaxation** is applied in the matrix for the coupling.
 
 ---
 
@@ -95,7 +95,7 @@ These routines take the usual mesh topology arrays (`NbNodebyFace`, `NumNodebyFa
 
 ---
 
-### `NewtonMecaNitsche.f` (Mechanics: Nitsche, no friction)
+### `NewtonMecaNitsche.f` (Mechanics: Nitsche )
 
 - `ElasticiteNitscheFrac(...)` — Assembles and solves the **mechanical system with Nitsche terms** on fracture faces. No Coulomb friction here. Uses:
   - Mesh connectivity (`NbNodebyCell`, `NumNodebyFace`, `NumCellbyFace`, …),
@@ -261,7 +261,7 @@ gfortran -O2 -o frac *.o $SUPERLULIB -framework Accelerate -lm
 
 1. **Place a mesh** (Gmsh `.msh`) at one of the paths used in `main.f`, or edit the `open(unit=num,file=...)` lines to point to your mesh.
 2. **Choose a contact formulation** in `main.f`:
-   - `parameter ( iMecaVBulle = 0 )` → Nitsche (no friction)
+   - `parameter ( iMecaVBulle = 0 )` → Nitsche (friction)
    - `parameter ( iMecaVBulle = 1 )` → Mixed LMs with friction & bubbles
 3. (Optional) adjust **physics/time parameters** (permeabilities, porosities, final time `TempsFinal`, time steps `Deltat*`, etc.).
 4. Run:
@@ -309,14 +309,6 @@ Common scalar outputs in the working directory (created by `main.f`):
 
 ---
 
-## Troubleshooting
-
-- **Link errors with SuperLU/BLAS**: confirm `${SUPERLULIB}` exists and libraries are in the correct order; on Linux, add `-fallow-argument-mismatch` for legacy interfaces if needed.
-- **Dimension overruns**: enlarge maxima in `include_parameter` (e.g., `NbNodebyFaceMax`) to match your mesh.
-- **Strange tangential signs on plots**: remember **tangents are intrinsic**; flip tangential components with `OrientationbyFaceFrac` for consistent visualization (see the comments at the top of `main.f`). 
-- **No friction in Nitsche mode**: this is by design; use `iMecaVBulle=1` to activate the mixed formulation with Coulomb friction.
-
----
 
 ## License
 
