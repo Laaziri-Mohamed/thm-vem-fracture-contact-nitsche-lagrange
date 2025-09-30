@@ -338,7 +338,9 @@ If you use this code in publications, please cite relevant work on:
 - **Contact mechanics with Coulomb friction** (active‑set / semismooth Newton)
 - **Fixed‑stress splitting** for poromechanics
 
-Add your papers or preferred references here.
+Laaziri, Mohamed, and Roland Masson. "VEM fully discrete Nitsche's discretization of Coulomb frictional contact-mechanics for mixed-dimensional poromechanical models." (2025).
+
+Laaziri, Mohamed, and Roland Masson. "VEM-Nitsche fully discrete polytopal scheme for frictionless contact-mechanics." SIAM Journal on Numerical Analysis 63.1 (2025): 81-102.
 
 ---
 
