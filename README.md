@@ -1,4 +1,4 @@
-# VEM Fracture Poro‑Mechanics (Fortran)
+# VEM Fracture Thermo-Poro‑Mechanics (Fortran)
 
 Research code for **linear elasticity with fractures and contact** (Coulomb friction) coupled with **pressure/temperature (poro‑thermo) flow** on general polyhedral meshes using a **Virtual Element Method (VEM) of degree 1**. Two contact formulations are provided:
 
