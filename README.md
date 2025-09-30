@@ -2,8 +2,8 @@
 
 Research code for **linear elasticity with fractures and contact** (Coulomb friction) coupled with **pressure/temperature (poro‑thermo) flow** on general polyhedral meshes using a **Virtual Element Method (VEM) of degree 1**. Two contact formulations are provided:
 
-- **Nitsche** : penalty/Nitsche enforcement on fracture faces.
-- **Mixed VEM with bubble DOFs + Lagrange multipliers** (with friction): constant multipliers per fracture face, optional normal stiffness.
+- **Nitsche** : Nitsche formulation.
+- **Mixed VEM with bubble DOFs + Lagrange multipliers**: constant multipliers per fracture face, optional normal stiffness.
 
 This README explains every file in this repository, how to build the solver, and how to run the example setups found in `main.f`.
 
