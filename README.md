@@ -1,6 +1,6 @@
 # VEM Fracture Poro‑Mechanics (Fortran)
 
-High‑performance research code for **linear elasticity with fractures and contact** (Coulomb friction) coupled with **pressure/temperature (poro‑thermo) flow** on general polyhedral meshes using a **Virtual Element Method (VEM) of degree 1**. Two contact formulations are provided:
+Research code for **linear elasticity with fractures and contact** (Coulomb friction) coupled with **pressure/temperature (poro‑thermo) flow** on general polyhedral meshes using a **Virtual Element Method (VEM) of degree 1**. Two contact formulations are provided:
 
 - **Nitsche** : penalty/Nitsche enforcement on fracture faces.
 - **Mixed VEM with bubble DOFs + Lagrange multipliers** (with friction): constant multipliers per fracture face, optional normal stiffness.
