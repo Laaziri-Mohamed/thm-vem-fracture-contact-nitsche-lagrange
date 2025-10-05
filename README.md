@@ -338,8 +338,7 @@ Laaziri, Mohamed, and Roland Masson. "VEM-Nitsche fully discrete polytopal schem
 
 ## Appendix: quick map of major routines
 
-- **Mechanics (Nitsche)**: `ElasticiteNitscheFrac`, `ResiduJacContact`
-- **Mechanics (LM + bubbles + friction)**: `ElasticiteVEMBulleFrac`, `ResiduContact`, `JACContact`
+- **Mechanics (Nitsche+ LM + bubbles + friction)**:  `ElasticiteNitscheFrac`, `ResiduJacContact`,`ElasticiteVEMBulleFrac`, `ResiduContact`, `JACContact`
 - **P/T**: `SolvePT`, `JacSmPT`
 - **Coupling**: `Compute_Porosity_Aperture`
 - **VEM & geometry**: `ComputegradvK(_nonplanar)`, `ComputepiK`, `GradTangentbyFace`, `ComputeSautbyFaceFrac`
